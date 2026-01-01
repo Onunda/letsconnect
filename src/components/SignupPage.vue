@@ -84,7 +84,6 @@ export default {
       }
 
       try {
-        // Replace with your signup API endpoint
         const url = 'https://private-517bb-wad20postit.apiary-mock.com/users';
         const res = await axios.post(url, {
           name: form.value.name,
