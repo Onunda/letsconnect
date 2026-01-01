@@ -51,7 +51,6 @@ export default {
       }
 
       try {
-        // Replace with your real reset password API
         await axios.post('https://private-517bb-wad20postit.apiary-mock.com/reset-password', {
           email: email.value,
         });
