@@ -1,5 +1,3 @@
-# hw4-group-8
-
 ## Project setup
 ```
 npm install
