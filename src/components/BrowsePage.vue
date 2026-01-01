@@ -5,15 +5,12 @@
         <div class="logo-container">
           <img src="../assets/logo.png" alt="postIt" />
         </div>
-
         <div class="search-container">
           <input v-model="search" type="text" placeholder="Search profiles..." />
           <button type="button" @click="searchProfiles">Search</button>
         </div>
-
         <div class="avatar-container">
           <button class="menu-button" @click.stop="toggleMenu">Menu</button>
-
           <div v-show="isMenuOpen" class="drop-down-container">
             <router-link class="menu-link" to="/post"> Posts </router-link>
             <hr class="menu-separator" />
@@ -22,7 +19,6 @@
         </div>
       </nav>
     </header>
-
     <main class="main-container">
       <div class="profiles-scroll">
         <div v-if="profiles.length === 0">Loading profiles...</div>
@@ -44,8 +40,8 @@
     </main>
   </section>
 </template>
-
 <script>
+  
 import axios from 'axios';
 
 export default {
@@ -92,7 +88,6 @@ export default {
         const response = await axios.get(
           'https://private-517bb-wad20postit.apiary-mock.com/profiles'
         );
-        // Add `followed` state to each profile
         this.profiles = response.data.map((profile) => ({ ...profile, followed: false }));
       } catch (err) {
         console.error('Failed to load profiles:', err);
